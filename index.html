@@ -40,17 +40,10 @@ un resultado según se orienta en la imagen adjunta.
             return arrn;
         }
         
-        function suma(matriz1, vector) {
-            for (var i = 0; i < 5; i++) {
-                for (var j=0; j<3; j++){
-                    matriz1.push(matriz1[i][j].map(function(num, idx) {
-                    return num + vector[idx];
-                }
-               
-                ));
-            }
-            }
-            return matriz1;
+        function suma(array1, vector) {
+            return array1.map(function(num, idx){
+                return num + vector[idx]
+            });
         }
 
         
@@ -82,11 +75,17 @@ un resultado según se orienta en la imagen adjunta.
 
         function trasladar(){
             var base = byId("width");
-            var altura = byId("height");
+            var altura = parseInt(byId("height"));
+            base = parseInt(base)
+
             array1= posicionInicial(base,altura);
             vectort = convertiranum(byId("vt"),",");
             document.getElementById("vert_ini").value= array1
-            document.getElementById("vert_end").value= suma(array1,vectort);
+            for(var i=0; i < 5; i++){
+                array1[i]=suma(array1[i],vectort);
+            }
+            
+            document.getElementById("vert_end").value= array1
 
         }
 
