@@ -40,21 +40,33 @@ un resultado según se orienta en la imagen adjunta.
             return arrn;
         }
         
+        function suma(matriz1, vector) {
+            var resultado = [];
+            for (var i = 0; i < 5; i++) {
+                resultado.push(matriz1[i].map(function(num, idx) {
+                    return num + vector[idx];
+                }));
+            }
+            return resultado;
+        }
 
         function posicionInicial(b,h){
-            var array = new Array(3)(5);
-            for(var i; i < 3; i++){
-                for(var j;j<5; j++){
+            var array = [3][5];
+            for(var i; i < 5; i++){
+                for(var j;j<3; j++){
                     array[i][j]=0;
                 }
             }
-            array[0][1]=b
+            
+            array[i][0]=0;
+            array(1)(1)= b;
             array[0][2]=b
             array[2][2]=b
             array[2][3]=b
             array[0][4]=m
             array[1][4]=h
             array[2][4]=m
+
             return array
 
         }
@@ -62,25 +74,25 @@ un resultado según se orienta en la imagen adjunta.
         function trasladar(){
             var base = byId("width");
             var altura = byId("height");
-            posicionInicial(base,altura);
-
+            array1= posicionInicial(base,altura);
+            vectort = convertiranum(byId("vt"),",");
+            document.getElementById("vert_ini").value= vectort 
+            document.getElementById("vert_end").value= suma(array1,vectort);
 
         }
 
 
     </script>
-
-
 </head>
-<body>
-<h1>Traslación de una pirámidde</h1>
-<p>Lado base <input id="width" size=1/></p>
-<p>Altura    <input id="height" size=1/></p>
-<p>Vector traslación    <input id="vt" size=8/></p>
-<button id="btn_esc" onclick="trasladar()">Ejecutar traslación</button></p>
-<p>Vertices posición inicial    <input id="vert_ini" size=50/></p>
-<p>Vertices posición final      <input id="vert_end" size=50/></p>
+    <body>
+        <h1>Traslación de una pirámidde</h1>
+        <p>Lado base <input id="width" size=1/></p>
+        <p>Altura <input id="height" size=1/></p>
+        <p>Vector traslación <input id="vt" size=8/></p>
+        <button id="btn_esc" onclick="trasladar()">Ejecutar traslación</button></p>
+        <p>Vertices posición inicial <input id="vert_ini" size=50/></p>
+        <p>Vertices posición final <input id="vert_end" size=50/></p>
 
-</body>
+    </body>
 </html>
 
